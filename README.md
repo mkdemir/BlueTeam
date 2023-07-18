@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="./assets/logo.png" width="300">
+</p>
+
 # Blue Team: Incident Handler
 
 ## İçerik
@@ -633,3 +637,92 @@ The 5 stages of the threat intelligence lifecycle
 * Analyze Data
 
 * Report Findings
+
+## Bölüm 2: Understanding Defence Methodology & Phases
+
+### Defense in Depth
+
+Türkçesi derinlemesine savunma olarak diyebiliriz.
+
+Derinlemesine savunma, bir kurluşun ağını, web özelliklerini ve sahip oldukları kaynakları verileri dataları bunları korumak için birden fazla güvenlik ürününü, uygulamasını, prosedürünü, alt prosedürünü kullanan bir siber güvenlik starejisi aslında saldırganların korunan bir ağı veya bir şirket mekanizmasının şirkete bir askeri düzeyde bir operasyona erişmesini önlemek için birden çok katmanlı bunlar gerek fiziksel olabiliyor gerek teknik olabiliyor. Yani gerek sanal veya fiziki gerekse idari çözümler olabiliyor. Güvenlik çözümlerine böyle bağlı olarak çok katmanlı bir yapı oluşturmayı hedefliyor.
+
+![Defense in Depth](/assets/Defense_in_Depth.jpg)
+
+Derinlemesine savunmanın ardındaki fikir, çeşitli riskli hamleleri bir cihazdan böyle eğer sekebilirse diğer cihazdan yakalanmayı sağlamak aslında.
+
+* Örnek: Bir saldırgan bir zararlı mail gönderdiği anda itibaren içeriye bir zararlının bulaşmasına kadar süre boyunca hangi güvenlik cihazlarında o pipeline boyunca geçecek, hangi pipeline noktasında  bunu engelleyebileceğiz bunu.
+
+Derinlemesine savunma neden gereklidir ?
+
+* Derinlemesine savunma stratejisi yol gösterici illkesi, tek bir güvenlik ürünün bir karşılabileceği  bir saldırıya karşı aslında tek bir güvenlik ürünü veya tek bir savunma katmanı aslında bir ağı savunmayacağı (Hiçbir sistem sömürülemez veya hacklenemez değildir).  Bu prensip ilede bir den fazla savunma katmanı inşa etmek gerekiyor. Bu savunma katmanlarının birbirinin ileyişi engel olmamalı. Ve özellikle business işini engellememesi gerekiyor.
+
+! Zero trust gibi sistemler
+
+* Ağ segmantasyonu çok önemli
+
+* Davranışsal analiz, anormal trafik kalıpları ve tafikte gelecek anormal olarak gelecek dalgalanmaları bunların işlenmesi.
+
+#### Perimeter Security
+
+Çevre güvenliği olarak da geçer. Genel olarak, bir kurum veya tesisin dış sınırlarını korumak ve izinsiz erişimi önlemek için uygulanan güvenlik önlemlerini ifade eder.
+
+* Perimeter Firewall: Güvenlik duvarının ilk katmanı, ortada bir DMZ varsa DMZ'tin önündeki firewall'da olabilir. Bu aslında sizi genel ağların bulunduğu ana savunma sistemini sağlayan katman. İnternetten sizi soyutlayan katman.
+
+Perimeter güvenliği, sadece bir firewall'dan daha fazlasını içerebilir. İşte ek olarak düşünebileceğiniz bazı unsurlar:
+
+* Intrusion Detection/Prevention System (IDS/IPS): Perimeter güvenliğinin bir parçası olarak, ağdaki anormal faaliyetleri tespit etmek ve müdahale etmek için IDS/IPS sistemleri kullanılabilir. Bu sistemler, zararlı etkinlikleri algılar ve bunlara karşı koruma sağlar.
+
+* Güvenlik Duvarı Politikaları: Perimeter firewall'da uygulanacak güvenlik duvarı politikaları, hangi trafiğin kabul edilebilir olduğunu belirler. Politikalar, belirli protokollerin, portların veya IP adreslerinin kullanımını kısıtlayabilir veya izin verebilir.
+
+* VPN (Virtual Private Network): Kurum içindeki uzaktan erişim gerektiren kullanıcılar için güvenli bir bağlantı sağlamak amacıyla VPN teknolojisi kullanılabilir. VPN, kullanıcıların internet üzerinden güvenli bir şekilde kurum ağına erişmelerini sağlar ve verilerin şifrelenmesini sağlar.
+
+* Geçiş Kontrolü: Perimeter güvenliği, fiziksel güvenlik önlemleri de içerebilir. Örneğin, bir tesisin dış sınırlarında güvenlik kameraları, turnikeler, kapılar, bariyerler ve kimlik doğrulama sistemleri gibi geçiş kontrolü önlemleri kullanılabilir.
+
+* Güvenlik İzleme ve Olay Yönetimi: Perimeter güvenliği için bir izleme ve olay yönetimi sistemi kullanmak önemlidir. Bu sistemler, ağdaki olayları izler, olası tehditleri tespit eder ve hızlı bir şekilde müdahale edilmesini sağlar.
+
+* Fiziksel Güvenlik: Kurumun veya tesisin dış çevresinde fiziksel güvenlik önlemleri de alınabilir. Örneğin, çitler, duvarlar, güvenlik kameraları, aydınlatma sistemleri gibi önlemler alınarak izinsiz erişimi zorlaştırabilir.
+
+Perimeter güvenliği genellikle çok katmanlı bir yaklaşım gerektirir. Bu nedenle, belirli bir kurumun veya tesisin ihtiyaçlarına göre farklı güvenlik önlemleri kombinasyonları uygulanabilir.
+
+##### Honeypot
+
+Honeypot, siber güvenlik alanında kullanılan bir tekniktir. Bu teknik, bilgisayar korsanlarını, zararlı yazılımları veya saldırıları çekmek ve izlemek amacıyla kullanılan bir tuzaktır. Honeypotlar, gerçek sistemler gibi davranan ve hassas verilere erişim sağlayan görünürde zayıf veya güvenlik açığı olan sistemlerdir. Bu şekilde, saldırganlar honeypot sistemlerine yönelerek gerçek hedefler ye  rine bu sistemlerle etkileşime geçerler.
+
+Honeypotlar çeşitli şekillerde sınıflandırılabilir. İşte yaygın honeypot türlerinden bazıları:
+
+* Yüksek Etkileşimli Honeypotlar (High-Interaction Honeypots
+): Bu tür honeypotlar, saldırganlarla etkileşim kurma yeteneğine sahiptir. Gerçek sistemler gibi davranırlar ve saldırganın eylemlerini izlemek, saldırı tekniklerini analiz etmek ve saldırganların niyetlerini anlamak için kullanılırlar. Saldırganların veri sağladığı veya komutlar gönderdiği bir ortam sunarlar.
+
+* Düşük Etkileşimli Honeypotlar (Low-Interaction Honeypots): Bu tür honeypotlar, saldırganlarla sınırlı etkileşim sağlar. Temel olarak ağ trafiğini analiz etmek ve saldırıları algılamak amacıyla kullanılırlar. Gerçek sistemler gibi davranma konusunda sınırlıdırlar ve saldırganların erişebileceği sınırlı işlevsellik sunarlar.
+
+* Ağ Honeypotları (Network Honeypots): Bu tür honeypotlar, bir ağ üzerinde yer alır ve ağ trafiğini izlemek, saldırıları tespit etmek ve saldırganları tespit etmek için kullanılır. Ağ trafiğini kaydedebilir, saldırı girişimlerini engelleyebilir veya saldırganları izleyebilirler.
+
+* İstemci Honeypotları (Client Honeypots): Bu tür honeypotlar, saldırganların hedef olarak seçtiği istemci uygulamalarını taklit eder. Örneğin, bir web tarayıcısı veya e-posta istemcisi gibi uygulamaları taklit ederek saldırganların hedeflerine saldırmasını sağlar. Bu tür honeypotlar, saldırı tekniklerini analiz etmek ve saldırıları tespit etmek için kullanılırlar.
+
+* Yapılandırma Honeypotları (Configuration Honeypots): Bu tür honeypotlar, sistemlerin ve servislerin hatalı yapılandırmalarını hedef alır. Örneğin, açık bırakılmış bir yönetici şifresi gibi yapılandırma hatalarını kullanarak saldırganları çekmeye çalışırlar. Bu şekilde saldırganların yapılandırma hatalarını keşfetmesi ve kötü niyetli eylemlerde bulunması sağlanır.
+
+Bu honeypot çeşitleri, saldırıları tespit etmek, saldırganların niyetlerini anlamak, saldırı tekniklerini analiz etmek ve siber güvenlik sistemlerini güçlendirmek için kullanılan farklı araçlar ve teknolojilerdir. Ancak honeypotlar, dikkatli bir şekilde konfigüre edilmeli ve izlenmelidir, aksi takdirde saldırganlar gerçek sistemlere zarar verebilir veya honeypotlar üzerinden başka saldırılar gerçekleştirebilirler.
+
+##### Cyber Kill Chain
+
+"Cyber Kill Chain" terimi, siber saldırıların aşamalarını ve saldırganların hedeflerine ulaşmak için kullandığı adımları tanımlayan bir kavramdır. Bu kavram, saldırganların bir hedefe karşı gerçekleştirdiği saldırıları anlamak, saldırıları önlemek ve saldırıya uğrayan sistemleri korumak için kullanılır. ABD merkezli Lockheed Martin şirketi tarafından ortaya atılan bu kavram, siber güvenlik uzmanları ve araştırmacılar tarafından yaygın olarak benimsenmiştir.
+
+Cyber Kill Chain, genellikle aşağıdaki adımlardan oluşur:
+
+1. Keşif (Reconnaissance): Saldırgan, hedef sistemi veya ağını hedef hakkında bilgi toplamak için araştırır. Bu aşamada, sosyal mühendislik, açık kaynak istihbaratı (OSINT) ve diğer teknikler kullanılabilir.
+
+2. Saldırı Yüzeyi Oluşturma (Weaponization): Saldırgan, saldırı vektörlerini oluşturmak için zararlı yazılım veya saldırı araçlarını hazırlar. Bu aşamada, zararlı kodlar veya kötü niyetli dosyalar gibi saldırıya yönelik araçlar geliştirilir.
+
+3. Tespit Etme (Delivery): Saldırgan, hazırladığı zararlı araçları hedef sistemlere veya ağlara ulaştırmak için çeşitli yöntemler kullanır. Bu aşamada, e-posta ekindeki zararlı yazılımlar, kötü amaçlı bağlantılar veya exploitler kullanılabilir.
+
+4. Sistemlere Sızma (Exploitation): Saldırgan, hedef sistemlerdeki zayıflıkları veya güvenlik açıklarını kullanarak içeri sızmaya çalışır. Bu aşamada, saldırgan, kimlik avı (phishing) saldırıları, güvenlik açıklarından yararlanma veya yetkilendirme hatalarını kullanabilir.
+
+5. Komuta ve Kontrol (C2): Saldırgan, hedef sistem üzerinde kontrol sağlamak için komuta ve kontrol sunucusu ile iletişim kurar. Bu aşamada, saldırgan, zararlı yazılımı yönlendirmek, komutlar göndermek ve veri çalmak için kullanılabilir.
+
+6. Hareket Etme (Lateral Movement): Saldırgan, hedef ağ içinde hareket eder ve diğer sistemlere yayılmaya çalışır. Bu aşamada, hedef sistemde keşfedilen zayıflıklar, yetkilendirme bilgileri veya yeterli ayrıcalıklar kullanılabilir.
+
+7. Ayrıcalıklı Erişim (Data Exfiltration): Saldırgan, hedef sistemden değerli verileri veya bilgileri çalmak için çaba harcar. Bu aşamada, saldırgan, hedef sistemden hassas verileri toplar ve dışarı aktarır.
+
+Cyber Kill Chain, bir saldırının adımlarını tanımlayarak güvenlik uzmanlarına ve organizasyonlara saldırıları tespit etmek, saldırı süreçlerini kesmek veya en azından etkilerini minimize etmek için bir çerçeve sunar. Buna dayanarak, organizasyonlar savunma stratejilerini planlayabilir, güvenlik açıklarını kapatmak ve saldırıları tespit etmek için gereken önlemleri alabilir.
+
+![Cyber Kill Chain](assets/ckc.png)
