@@ -524,7 +524,7 @@ Hangi sistemleri alabiliriz hangi sistemleri monitoring için değerlendirebilir
 
 * Örnek windows event loglarını alıyoruz. Ama syslog yükleyip ekstra şeyi mi daha çok komut satır loglarını mı daha çok almalıyız. Ya da içeriye bir HIDS yükleyip ilgili SIEM'in tespit etmediği noktalar da mı daha fazla loglamalar sağlamalıyız. SIEM'imizde agent yoksa
 
-#### Threat Intelligence ()
+#### Threat Intelligence Nedir
 
 Tamamıyla Threat Intelligence kaynaklarından gelen veri akışlarının içeride bir nevi Correlation kısmındaki gibi korele ederek ilgili alarmlarımızdaki bir port taraması oldu dışarıdan bu port taramasındaki threat intelligence ip'leri arasında bulunuyorsa o zaman farklı bir alarm üret veya kritiklik düzeyini değiştir gibi aksiyonlar korelasyonlar üretebiliriz.
 
@@ -726,3 +726,180 @@ Cyber Kill Chain, genellikle aşağıdaki adımlardan oluşur:
 Cyber Kill Chain, bir saldırının adımlarını tanımlayarak güvenlik uzmanlarına ve organizasyonlara saldırıları tespit etmek, saldırı süreçlerini kesmek veya en azından etkilerini minimize etmek için bir çerçeve sunar. Buna dayanarak, organizasyonlar savunma stratejilerini planlayabilir, güvenlik açıklarını kapatmak ve saldırıları tespit etmek için gereken önlemleri alabilir.
 
 ![Cyber Kill Chain](assets/ckc.png)
+
+## Red Team vs Blue Team Startegies
+
+Red Team ve Blue Team, siber güvenlik alanında kullanılan iki farklı stratejik yaklaşımı ifade eder. Red Team, saldırganların rolünü üstlenerek sistemi veya organizasyonu test etmeye çalışırken, Blue Team ise savunma görevini üstlenerek saldırılara karşı koruma ve önlem alma işlemleri gerçekleştirir. İşte Red Team ve Blue Team'in bazı stratejileri:
+
+### Red Team Stratejileri:
+
+Objective: Exploit, Compromise and Circumvent
+
+1. Saldırı Senaryoları Oluşturma: Red Team, farklı saldırı senaryolarını modelleyerek sistemi veya ağları test eder. Bu senaryolar, gerçek dünya saldırılarına benzer saldırı vektörlerini içerir.
+
+2. Zayıf Nokta Analizi: Red Team, hedef sistemdeki zayıf noktaları tespit etmeye odaklanır. Bu zayıf noktalar, yazılım açıkları, yanlış yapılandırılmış güvenlik ayarları veya insan faktörlerinden kaynaklanabilir.
+
+3. Sosyal Mühendislik: Red Team, hedef organizasyonda sosyal mühendislik taktikleri kullanarak çalışanların güvenlik politikalarını ihlal etmeye veya hassas bilgilere erişmeye çalışabilir.
+
+4. Hedef Tespiti: Red Team, hedef organizasyonda kritik sistemleri ve verileri belirleyerek odaklanılacak alanları belirler.
+
+5. Sürekli Test ve Geri Bildirim: Red Team, periyodik olarak testler yaparak organizasyonun güvenlik düzeyini sürekli olarak değerlendirir ve geri bildirim sağlar.
+
+Terimler:
+
+1. Phishing: Phishing, genellikle sahte e-posta veya web siteleri aracılığıyla kullanıcıların güvenini kazanarak kişisel bilgilerini (kullanıcı adları, şifreler, kredi kartı bilgileri vb.) çalmaya yönelik bir saldırı yöntemidir. Red team, bu tür sahte e-posta veya web siteleri oluşturarak ve çalışanları hedef alarak şirketin güvenlik farkındalığını test eder.
+
+2. Social Engineering: Sosyal mühendislik, insanları manipüle ederek hassas bilgilere erişmeyi veya istenilen eylemi gerçekleştirmeyi amaçlayan bir saldırı yöntemidir. Red team, sosyal mühendislik taktikleri kullanarak çalışanları kandırmaya veya yanıltmaya çalışarak organizasyonun savunma zaaflarını belirler.
+
+3. Malware: Kötü amaçlı yazılım, bilgisayar sistemlerine zarar veren veya yetkisiz erişim sağlayan yazılım türlerini ifade eder. Red team, özelleştirilmiş kötü amaçlı yazılımlar kullanarak bir organizasyonun sistemlerine sızmayı ve savunmasızlıkları tespit etmeyi hedefler.
+
+4. Ransomware: Ransomware, sistemi veya dosyaları kilitleyerek kurbanlardan fidye talep eden kötü amaçlı bir yazılım türüdür. Red team, organizasyonun savunma mekanizmalarını test etmek için bu tür saldırıları taklit edebilir.
+
+5. Spoofing: Spoofing, kimlik avı veya erişim hakları elde etmek için kimlik bilgilerini sahte olarak temsil etme işlemidir. IP adresi, e-posta gönderen adresi vb. sahte bilgilerle yapılan saldırılar, red team tarafından test edilebilir.
+
+6. Known Vulnerabilities: Bilinen zafiyetler, yaygın olarak bilinen ve genellikle yamalanmış olması gereken güvenlik açıklarıdır. Red team, bu tür zafiyetleri hedef alarak organizasyonun güvenlik düzeyini değerlendirebilir.
+
+7. Weak Configurations: Zayıf yapılandırmalar, güvenlik açıklarını artırabilen kötü ayarlamalardır. Red team, organizasyonun sistemlerinde zayıf yapılandırmaları tespit ederek olası saldırı yollarını belirleyebilir.
+
+8. Local Exploits: Yerel açıklıklar, bir saldırganın bir sistemi etkilemek için yerel erişime sahip olmasını gerektiren güvenlik açıklarıdır. Red team, bu tür yerel açıklıkları kullanarak içeriden saldırı senaryolarını simüle edebilir.
+
+9. Stolen Authentication Tokens: Kimlik doğrulama belirteçleri, kullanıcıların kimliklerini doğrulamak için kullanılan bilgilerdir. Bu belirteçlerin çalınması, red team tarafından yapılan saldırılarda bir kullanıcının kimliğini sahtecilikle ele geçirmek için kullanılabilir.
+
+10. Waterhole: Waterhole saldırıları, belirli bir grup insanın sık kullandığı güvenilir bir web sitesinin veya kaynağın hedef alınmasıdır. Red team, hedef organizasyonun çalışanlarını hedef almak için bu tür saldırıları simüle edebilir.
+
+11. Fake WAP: Sahte Kablosuz Erişim Noktaları, kötü amaçlı ağ trafiğini dinlemek veya kullanıcıları kimlik avı saldırılarına maruz bırakmak için oluşturulan sahte Wi-Fi ağlarıdır. Red team, organizasyonun çalışanlarını bu tür tehlikelere karşı farkındalığı test etmek için sahte WAP kullanabilir.
+
+12. Physical Security: Fiziksel güvenlik, bina ve ofis alanlarına yetkisiz erişimi önlemeyi amaçlar. Red team, fiziksel güvenlik önlemlerini test etmek için fiziksel saldırı senaryoları oluşturabilir.
+
+13. Data "Smash and Grab": Veri "Smash and Grab", hızlı ve yoğun bir şekilde veri çalma stratejisidir. Saldırganlar, hızlı bir şekilde hassas verileri çalarak uzun süreli tespit riskini azaltmaya çalışır. Red team, organizasyonun savunma mekanizmalarının bu tür hızlı saldırılara tepkisini test edebilir.
+
+14. Lazy / Broken Processes: Tembel veya kusurlu iş süreçleri, güvenlik açıklarına neden olabilir. Red team, organizasyonun süreçlerindeki zayıflıkları belirleyerek iyileştirme fırsatlarını ortaya çıkarabilir.
+
+15. Security Misconfigurations: Güvenlik hatalı yapılandırmalar, sistemlerin veya yazılımların yanlış yapılandırılmasından kaynaklanan güvenlik açıklarına neden olabilir. Red team, organizasyonun güvenlik yapılandırmalarını doğrulamak için bu tür hataları araştırabilir.
+
+16. Vendor and Third-Party Defaults: Tedarikçi ve üçüncü taraf yazılımlar, varsayılan olarak güvenlik zafiyetleri içerebilir. Red team, bu tür yazılımların güvenlik düzey
+
+ini test etmek için varsayılan yapılandırmaları kullanabilir.
+
+17. Remote Access: Uzaktan erişim, kuruluş çalışanlarının veya dış paydaşların sistemlere uzaktan bağlanmasına olanak tanır. Red team, uzaktan erişim yöntemlerini kullanarak organizasyonun savunmasını test edebilir.
+
+18. Command and Control: Saldırganlar, hedef sistemlerle iletişim kurmak ve saldırıları yönetmek için komut ve kontrol altyapıları kullanır. Red team, organizasyonun bu tür kötü amaçlı altyapıları tespit etme ve engelleme yeteneklerini değerlendirebilir.
+
+19. Zombies / Bots: Zombi makineler veya botlar, uzaktan kontrol altında olan kötü amaçlı yazılımlar tarafından ele geçirilmiş bilgisayarları ifade eder. Red team, organizasyonun bilgisayarlarının zombi olarak kullanılabilirliğini test edebilir.
+
+20. Everything and the Kitchen Sink: Bu ifade, red team'in çok çeşitli saldırı tekniklerini ve stratejilerini kullanarak organizasyonun tüm güvenlik savunmalarını test etme niyetini vurgular. Red team, olabildiğince kapsamlı ve çeşitli bir saldırı yaklaşımı benimser.
+
+Unutmayın ki red team, organizasyonun güvenlik zafiyetlerini belirlemek ve gidermek için etik sınırlar içinde çalışır. Saldırganlar tarafından kullanılan taktikleri simüle ederken, organizasyonun güvenlik düzeyini artırmak ve savunmalarını güçlendirmek amacıyla iş birliği yaparlar.
+
+### Blue Team Stratejileri:
+
+Objective: Detect, Prevent and Security Controls tested
+
+1. Savunma Yöntemlerinin Uygulanması: Blue Team, güvenlik politikalarını ve prosedürleri belirleyerek ve uygulayarak organizasyonu saldırılara karşı korur.
+
+2. Tehdit İzleme: Blue Team, siber tehditleri ve saldırıları izleyerek erken uyarı sistemi kurar ve etkin müdahale sağlar.
+
+3. Güvenlik Duvarları ve Ağ İzleme: Blue Team, güvenlik duvarları ve ağ izleme araçları kullanarak saldırıları engellemeye ve tespit etmeye çalışır.
+
+4. Hassas Veri Yönetimi: Blue Team, hassas verileri doğru bir şekilde sınıflandırarak ve koruyarak veri sızıntılarını önlemeye çalışır.
+
+5. Acil Durum Müdahalesi: Blue Team, bir saldırı gerçekleştiğinde acil durum müdahale planları uygulayarak olayı hızlı bir şekilde ele alır ve zararı minimize etmeye çalışır.
+
+6. Eğitim ve Farkındalık: Blue Team, organizasyon içindeki çalışanları siber güvenlik konusunda eğiterek ve farkındalık yaratılarak insan kaynaklı güvenlik ihlallerinin önüne geçmeye çalışır.
+
+Terimler:
+
+1. Security Awareness Training: Güvenlik farkındalık eğitimi, çalışanların güvenlik tehditleri ve en iyi güvenlik uygulamaları konusunda bilinçlendirilmesini sağlayan bir süreçtir. Blue team, organizasyon içinde güvenlik bilincini artırmak ve çalışanları saldırılara karşı bilinçli hale getirmek için bu tür eğitimler düzenler.
+
+2. Domain Expirations: Alan adı süreçleri ve süre sonları yönetimi, önemli bir güvenlik unsuru olabilir. Blue team, etkin alan adı yönetimi ile sahtekârlıkları ve alan adı sahteciliğini önlemeye çalışır.
+
+3. Incident Response Process/Procedures: Olay yanıt süreçleri ve prosedürleri, organizasyonun saldırılara yanıt verme ve sorunları çözme planlarını belirler. Blue team, etkili bir olay yanıtı için süreçleri düzenler ve ekipleri bu tür senaryolara hazırlar.
+
+4. Email Filters, Thresholds and Spam Rules: E-posta filtreleri, e-postalarda spam, phishing ve zararlı içeriği engellemek için kullanılır. Blue team, etkin e-posta filtreleme ve spam kuralları ile kötü amaçlı e-postaların engellenmesine yardımcı olur.
+
+5. Logs and SIEM Config/Alerts: Log kayıtları ve Güvenlik Olay Yönetimi (SIEM) yapılandırmaları ve uyarıları, şüpheli faaliyetleri ve güvenlik olaylarını izlemek ve tespit etmek için kullanılır. Blue team, olayları analiz etmek ve tehditleri hızlı bir şekilde tespit etmek için logları ve SIEM'i düzenler.
+
+6. Config & Patch Management: Yapılandırma ve yama yönetimi, sistemlerin güvenli bir şekilde yapılandırılmasını ve güncel yamalarla güncel tutulmasını sağlar. Blue team, sistemlerin ve yazılımların güvenlik düzeyini artırmak için yapılandırma ve yama yönetimini yönetir.
+
+7. Web Browser Config: Web tarayıcılarının güvenlik yapılandırmaları, çevrimiçi tehditlerden korunmak için önemlidir. Blue team, çalışanların web tarayıcılarını güvenli bir şekilde yapılandırmasına yardımcı olur.
+
+8. MS Office Security Settings: Microsoft Office uygulamalarının güvenlik ayarları, makroların etkinleştirilmesi ve dış bağlantılara izin verme gibi özelliklerle ilgili önemlidir. Blue team, MS Office güvenlik ayarlarını yapılandırarak saldırı vektörlerini sınırlar.
+
+9. Deny Log Relay Request: Saldırganlar, olayları izlemeyi zorlaştırmak için logların toplanmasını engellemeye çalışabilir. Blue team, logların istenmeyen erişimi engellemek ve korumak için bu tür talepleri reddeder.
+
+10. White Listing: White listing, yalnızca belirli bilinen ve onaylanmış uygulamaların çalışmasına izin verme anlamına gelir. Blue team, yalnızca güvenilir uygulamaların çalışmasını sağlamak için bu tür bir yaklaşımı uygular.
+
+11. Authenticated Proxies: Kimlik doğrulamalı proxyler, kullanıcıların internet trafiğini kimlik doğrulamasıyla filtrelemeyi sağlar. Blue team, güvenlik için internet trafiğini yönetmek ve izlemek için kimlik doğrulamalı proxyler kullanır.
+
+12. Least Privilege: En az ayrıcalık ilkesi, kullanıcıların sadece işlerini yapmak için ihtiyaç duydukları minimum ayrıcalığı sahip olmalarını ifade eder. Blue team, kullanıcıların gereksiz yetkilere erişimini kısıtlayarak güvenliği artırır.
+
+13. Anti-virus: Antivirüs yazılımları, kötü amaçlı yazılımları tespit etmek ve engellemek için kullanılır. Blue team, güvenlik yazılımlarını yöneterek zararlı yazılımların tespit edilmesine yardımcı olur.
+
+14. FIM/WMI Event Triggers: Dosya bütünlüğü izleme (FIM) ve Windows Yönetim Araç Seti (WMI) olay tetikleyicileri, sistemin izlenmesini ve şüpheli değişikliklerin belirlenmesini sağlar. Blue team, bu olay tetikleyicilerini kullanarak güvenlik olaylarını tespit eder.
+
+15. Firewall Rules: Güvenlik duvarı kuralları, ağ trafiğini yönlendirmek ve izlemek için kullanılır. Blue team, güvenlik duvarı politikalarını yapılandırarak istenmeyen trafiği engeller ve saldırıları önler.
+
+16. Fix Up Protocols: Protokollerin güvenlik açıklarının giderilmesi ve güçlendirilmesi işlemidir. Blue team, protokollerin güvenliğini artırmak için düzeltmeler yapar.
+
+17. Secure Group Policy Settings: Güvenli Grup İlkesi Ayarları, Active Directory ortamlarında güvenlik politikalarını uygulamak için kullanılır. Blue team, güvenli Grup İlkesi Ayarlarını yapılandırarak güvenlik düzeyini yükseltir.
+
+18. Authenticated HTTP Proxies: Kimlik doğrulamalı HTTP proxyleri, güvenli internet trafiği yönetimi ve filtrelemesi için kullanılır. Blue team, kimlik doğrulamalı HTTP proxylerini kullanarak güvenliği artırır.
+
+19. Application White Listing: Uygulama beyaz listesi, yalnızca onaylanmış ve güvenilir uygulamaların çalışmasına izin verme anlamına gelir. Blue team, güvenilir olmayan uygulamaların çalışmasını önlemek için bu tür bir beyaz listeleme yöntemini kullanır.
+
+20. Canaries: Canaries, saldırıları tespit etmek için konulmuş sahte güvenlik açıkları veya sunuculardır. Blue team, saldırganların canary'lere saldırıları tespit etmesine ve savunma önlemlerini uyarlamasına yardımcı olur.
+
+Bu kavramlar, blue team'in organizasyonun savunma düzeyini artırmak ve güvenlik tehditlerine karşı etkili bir şekilde yanıt vermek için uyguladığı önlemlerden sadece birkaçıdır. Blue team, proaktif ve reaktif güvenlik önlemleri alarak organizasyonun güvenlik postürünü güçlendirir.
+
+
+### Malware 
+
+<p align="center">
+    <img src="./assets/types-of-malware.png" width="300">
+</p>
+
+Zararlı yazılım (malware), bilgisayar sistemlerine zarar veren veya yetkisiz erişim sağlayan yazılımları ifade eder. Zararlı yazılımlar genellikle kötü niyetli saldırganlar tarafından oluşturulur ve yayılır. İşte zararlı yazılımın bazı yaygın tipleri:
+
+1. Virüsler: Virüsler, zararlı bir yazılım türüdür ve diğer dosyalara bulaşarak kendi kopyalarını çoğaltabilirler. Genellikle bilgisayar sistemlerine veya dosyalara zarar verir ve yayılmak için enfekte dosyaları kullanır.
+
+2. Solucanlar (Worms): Solucanlar, ağlar arasında otomatik olarak yayılan zararlı yazılımlardır. Kendi kendine yayılmak için ağlarda aktif olarak çalışırlar ve bulaştıkları sistemlerde çoğalarak büyürler.
+
+3. Trojanlar (Trojan Horse): Trojanlar, zararlı amaçlar için kullanıcılara zararsız gibi görünen dosya veya uygulamaları temsil eden zararlı yazılımlardır. Saldırganlar, kullanıcıları kandırmak ve sistemlere izinsiz erişim sağlamak için trojanları kullanır.
+
+4. Casus Yazılımlar (Spyware): Casus yazılımlar, kullanıcıların bilgisayar etkinliklerini izleyen ve çalınan bilgileri kötü niyetli kişilere ileten zararlı yazılımlardır. Casus yazılımlar genellikle gizlice çalışır ve kullanıcının farkına varmadan bilgi toplar.
+
+5. Reklam Yazılımları (Adware): Reklam yazılımları, kullanıcıları istenmeyen reklamlara veya pop-up'lara maruz bırakan zararlı yazılımlardır. Genellikle ücretsiz uygulamaların yüklenmesi sırasında gizlice sisteme bulaşırlar.
+
+6. Rootkitler: Rootkitler, sistemin en düşük seviyesinde çalışarak kendilerini gizleyen ve diğer zararlı yazılımların tespitini engelleyen yazılımlardır. Saldırganlara uzaktan erişim sağlama ve sistem üzerinde tam kontrol elde etme yeteneğine sahiptirler.
+
+7. Ransomware: Ransomware, kurbanın dosyalarını şifreleyen ve fidye talep eden zararlı yazılımlardır. Kurbanlar dosyalarını geri almak için genellikle bir fidye ödemek zorunda kalır.
+
+8. Botnetler: Botnetler, birçok enfekte bilgisayardan oluşan bir ağdır. Saldırganlar, bu botnetleri genellikle DDoS saldırıları, spam gönderme veya diğer zararlı faaliyetler için kullanır.
+
+9. Keyloggerlar: Keyloggerlar, klavye girişlerini kaydeden zararlı yazılımlardır. Saldırganlar, keyloggerları kullanarak kullanıcıların kimlik bilgilerini, şifrelerini ve diğer hassas bilgilerini çalabilir.
+
+10. Fileless Malware: Fileless malware, genellikle sistemlerde dosya sistemine bırakılan iz bırakmayan bir tür zararlı yazılımdır. Bellek üzerinde çalışır ve geleneksel antivirüs yazılımlarının tespitini zorlaştırır.
+
+Bu sadece zararlı yazılım tiplerinin birkaçıdır ve sürekli olarak gelişen bir tehdit peyzajı nedeniyle yeni zararlı yazılım türleri ortaya çıkabilir. Güvenlik açısından, güvenlik yazılımları, güncellemeler ve bilinçli kullanıcı davranışları zararlı yazılım tehditlerine karşı korunma ve önlem alma açısından önemlidir.
+
+### EDR / EPP / AV
+
+* Antivirüs, bilgisayarınızı virüs ve diğer kötü amaçlı yazılımlardan korumak için kullanılan bir yazılımdır. Antivirüs yazılımları, kötü amaçlı yazılımların imzalarını (kod parçalarını) tanımlayarak ve engellemeye çalışarak çalışır.
+
+* EPP (Uç Nokta Koruma Platformu), bilgisayarınızın, sunucunuzun ve mobil cihazınızın virüs, kötü amaçlı yazılım, fidye yazılımı ve diğer tehditlere karşı korunmasını sağlayan bir yazılımdır. EPP yazılımları, antivirüs yazılımlarının yanı sıra, davranışsal algılama, uç nokta yönetimi ve uç nokta güvenliği gibi diğer koruma özelliklerini de içerir.
+
+* EDR (Uç Nokta Algılama ve Yanıt), bilgisayarınızın, sunucunuzun ve mobil cihazınızın saldırılara maruz kaldığında tehditleri algılamanıza ve bunlara yanıt vermenize yardımcı olan bir yazılımdır. EDR yazılımları, davranışsal algılama, uç nokta yönetimi ve uç nokta güvenliği gibi EPP yazılımlarının özelliklerini içerir ve ayrıca saldırıların daha kapsamlı bir şekilde algılanması ve yanıt verilmesi için ek özellikler sağlar.
+
+#### Farkları
+
+Antivirus, EPP ve EDR arasındaki temel fark, EDR yazılımlarının EPP yazılımlarına göre daha kapsamlı bir tehdit algılama ve yanıt yetenekleri sunmasıdır. EDR yazılımları, bilgisayarınızın, sunucunuzun ve mobil cihazınızın saldırılara maruz kaldığında tehditleri daha kapsamlı bir şekilde algılayabilir ve bunlara yanıt verebilir. Bu, EDR yazılımlarının EPP yazılımlarından daha iyi bir koruma sağladığı anlamına gelir.
+
+Antivirus, EPP ve EDR yazılımlarını birlikte kullanmak, bilgisayarınızı, sunucunuzu ve mobil cihazınızı en iyi şekilde korumanın en iyi yoludur. Antivirus yazılımları, kötü amaçlı yazılımların bilgisayarınıza bulaşmasını önlerken, EPP ve EDR yazılımları, bilgisayarınıza bulaşan kötü amaçlı yazılımları algılar ve bunlara yanıt verir. Bu, bilgisayarınızı, sunucunuzu ve mobil cihazınızı en kapsamlı şekilde korumanızı sağlar.
+
+# COMMON TYPES OF SECURITY VULNERABILITIES
+
+<p align="center">
+    <img src="./assets/Security-Vulnerabilities.png">
+</p>
+
+Kaynak: [Security Vulnerabilities](https://www.spiceworks.com/it-security/vulnerability-management/articles/what-is-a-security-vulnerability/)
