@@ -4,30 +4,18 @@
 
 # Blue Team: Incident Handler
 
+Bu repo, **Alican Kiraz**'ın hazırlamış olduğu **'Blue Team: Incident Handler'** adlı Udemy eğitiminde aldığım notları içermektedir. 
+
 ## İçerik
 
-1. Siber güvenlik ekiplerini ve görevlerini, kuruluş amaçlarını ve ayrımlarını ele alacağız.
-2. Blue Team ekibi ve görevlerini, kuruluş amaçlarını ve ayrımlarını ele alacağız.
-    * Incident Response, Threat Hunting, Malware Analysis, Threat Intelligence, SOC, Digital Forensic, Network Defense, Software Security ekiplerinin görevlerini, kuruluş prensiplerini ve işleyişlerini ele alacağız.
-3. Threat Hunter ekiplerini ve Threat Hunting prensiplerini; Threat Hunting prosedürlerini ve işleyişini ele alarak olası anomalilerde hunting taktikleri ile keşfi ele alacağız.
-4. Incident Response ekibini ve IR prensiplerini ele alacağız.
-5. Cyber Kill Chain adımlarını ve bu adımları engelleme/tespit etme taktiklerini inceleyeceğiz.
-6. Kurumsal Savunma hattı oluşturmayı ve savunma prensiplerini;
-    * Defense in Depth'i full spektrum ile ele alarak incelemeyi sağlayacağız.
-7. Hunting Lab ortamı dizaynını ve geliştirilmesini;
-    * Open Source Host based IDS ve Network based IDS dizaynı, alarm aştırılmasını sağlayacağız
-    * SIEM dizayn ve alarm geliştirilmesini sağlayacağız.
-    * Saldırı Simülasyonlarıyla testler yapacağız ve analizler tespit edip alarm açtıracağız.
-    * Lab ortamının geliştirilmesini sağlayacağız
-8. Ve birçok blue team teorik ve pratik konularını ele alacağız.
-
+- [Bölüm 1: Understanding the Blue Team Methodology](#bölüm-1-understanding-the-blue-team-methodology)
+- [Bölüm 2: Understanding Defence Methodology & Phases](#bölüm-2-understanding-defence-methodology--phases)
+- [Bölüm 3: Red Team vs Blue Team Startegies](#bölüm-3-red-team-vs-blue-team-startegies)
+- [Bölüm 4: Incident Handling & Management](#bölüm-4-incident-handling--management)
+- [Bölüm 5: Open Source and Free Blue Team Tools](#bölüm-5-open-source-and-free-blue-team-tools)
 ## Bölüm 1: Understanding the Blue Team Methodology
 
-### ÖZET
-
-Bu eğitimin genelindeki Siber güvenlik sektöründe, özellikle Blue Team alanında sahip olmanız gereken enterprise defense yaklaşımları, prensipleri ve metodolojileri üzerinde duracağız. Blue team alanında ilerlemenin ve başarılı olmanın en önemli anahtarı, bu noktalarda uzmanlaşmak ve bütünü görerek hareket etmek önemlidir.
-
-Kariyeriniz boyunca kullandığınız araçlar ve markalar ne kadar değişse de öğrendiğiniz prensipler ve metodolojiler sayesinde onlara adapte olma ve yeni teknolojileri kavrama açısından o kadar hızlı olacaktır. Burada göreceğiniz öğretiler, çünkü markalar ve araçlar her bir kurumda sürekli değişebilir. Veya farklı bir kuruma geçtiğinizde değişebilir. Bunlara bağlı kalmamanız gerekmektedir. Ve bunun arkasındaki teknolojileri ve enterprise security'de yarattıkları etkileri öğrenmek.
+Siber güvenlik sektöründe, özellikle Blue Team alanında sahip olmanız gereken enterprise defense yaklaşımları, prensipleri ve metodolojileri üzerinde duracağız. Blue team alanında ilerlemenin ve başarılı olmanın en önemli anahtarı, bu noktalarda uzmanlaşmak ve bütünü görerek hareket etmek önemlidir.
 
 Yeni bir şey öğrenmek, bir puzzle çözmek gibi olur. Çok hızlı adapte olursunuz. Bir daha baktığınızda çok çabuk çözebilirsiniz. Arkasındaki teknolojileri, prensiplerini ve nedenlerini öğrenmek sizi her zaman bir adım öne çıkaracaktır. Karşınıza gelecek sonraki puzzle'da her şeyi nasıl yerli yerine yerleştireceğinizi çok rahat öğreneceksiniz.
 
@@ -37,7 +25,9 @@ Yeni bir şey öğrenmek, bir puzzle çözmek gibi olur. Çok hızlı adapte olu
 
 Bir SOC ekibinde çalışan Tier 3 olarak çalışan threat hunting pozisyonunda çalışan birinin teorik ve yarı pratik bilgilerini edinmiş olacağız. (Yarı pratik: Tamamı siz bir şeyleri aramadıkça kurcalamadıkça tam bir pratiklik elde edemeyeceksiniz).
 
-En iyi eğitmen, insanın kendisi ne kadar araştırır ne kadar kurgular ne kadar pratik bilgiler edinirse o kadar çok kendisi öğrenir.
+<p align="center">
+    <img src="./assets/rabbit.jpg" width="200">
+</p>
 
 > Mavi hapı alırsan hikaye biter. Yatağında uyanır ve istediğin şeye inanırsın. Kırmızı hapı alırsan Mucize Ülkesinde kalırsın ve sana tavşan deliğinin ne kadar derin olduğunu gösteririm. Unutma! Sana gerçeği öneriyorum. O kadar. (Morpheus)
 
@@ -45,7 +35,7 @@ En iyi eğitmen, insanın kendisi ne kadar araştırır ne kadar kurgular ne kad
 
 Siber güvenlik perspektifinden bakarak blue team metodolojilerini anlamamız gerekiyor. Öğrenme sürecimizde bu metodolojilere odaklanacağız ve onları anlamaya çalışacağız.
 
-### Cyber Security Teams
+#### Cyber Security Teams
 
 Siber güvenlikteki alt ekipler.
 
@@ -654,9 +644,27 @@ Derinlemesine savunmanın ardındaki fikir, çeşitli riskli hamleleri bir cihaz
 
 Derinlemesine savunma neden gereklidir ?
 
-* Derinlemesine savunma stratejisi yol gösterici illkesi, tek bir güvenlik ürünün bir karşılabileceği  bir saldırıya karşı aslında tek bir güvenlik ürünü veya tek bir savunma katmanı aslında bir ağı savunmayacağı (Hiçbir sistem sömürülemez veya hacklenemez değildir).  Bu prensip ilede bir den fazla savunma katmanı inşa etmek gerekiyor. Bu savunma katmanlarının birbirinin ileyişi engel olmamalı. Ve özellikle business işini engellememesi gerekiyor.
+* Derinlemesine savunma stratejisi yol gösterici illkesi, tek bir güvenlik ürünün bir karşılabileceği  bir saldırıya karşı aslında tek bir güvenlik ürünü veya tek bir savunma katmanı aslında bir ağı savunmayacağı (Hiçbir sistem sömürülemez veya hacklenemez değildir).  Bu prensip ilede bir den fazla savunma katmanı inşa etmek gerekiyor. Bu savunma katmanlarının birbirinin ileyişi engel olmamalı. Ve özellikle business işini engellememesi gerekiyor zero trust gibi sistemler.
 
-! Zero trust gibi sistemler (Düzenlenecek)
+Zero Trust:
+
+Zero Trust, Türkçe olarak "Sıfır Güven" olarak çevrilebilecek bir bilgi güvenliği yaklaşımıdır. Zero Trust, bir organizasyonun ağ içindeki tüm kullanıcıları, cihazları ve verileri varsayılan olarak güvenilmez olarak ele alır ve bunların güvenilir olduğunu doğrulamadan erişim izni vermez.
+
+Geleneksel güvenlik yöntemleri, ağın dışında bulunan kullanıcıları güvensiz kabul edip, ağın içine girdiklerinde serbest erişime sahip olmalarına izin verirler. Ancak günümüzde, siber saldırıların artması ve verilerin sürekli olarak tehdit altında olması nedeniyle bu tür güvenlik yaklaşımları yetersiz kalmıştır.
+
+Zero Trust yaklaşımında ise her kullanıcı ve cihaz, güvenilir olduğunu ispatlamadan kaynaklara erişemez. Bu, kimlik doğrulama, cihaz güvenilirliği tespiti, ağ trafik izleme ve yetkilendirme politikalarının sürekli olarak uygulanması ve izlenmesi gibi katmanlı güvenlik önlemlerinin kullanılmasını gerektirir.
+
+Sıfır Güven yaklaşımının temel özellikleri şunlardır:
+
+1. **Kimlik doğrulama ve yetkilendirme**: Kullanıcıların ve cihazların kimlikleri doğrulanır ve belirlenen politikalara göre yalnızca gereksinim duydukları kaynaklara erişim izni verilir.
+
+2. **Mikro-segmentasyon**: Ağdaki kaynaklar küçük parçalara ayrılarak, kullanıcıların yalnızca ihtiyaç duydukları spesifik alanlara erişmeleri sağlanır. Böylece, bir saldırganın ağ içinde hareket etmesi ve geniş çaplı hasara neden olması engellenir.
+
+3. **Sürekli izleme ve denetleme**: Kullanıcılar ve cihazlar erişim haklarını kaybettikleri durumları anında kaybeder ve güvenilirlikleri sürekli olarak değerlendirilir.
+
+4. **Güvenlik olaylarına tepki**: Anomali tespiti ve saldırı girişimlerini tespit etmek için güvenlik olayları sürekli olarak izlenir ve bunlara hızlı bir şekilde tepki verilir.
+
+Zero Trust yaklaşımı, siber güvenlik açısından daha güçlü bir strateji olarak kabul edilir ve günümüzde birçok büyük organizasyon tarafından tercih edilmektedir. Böylece, ağ içindeki saldırıların etkileri en aza indirgenir ve veri güvenliği daha iyi sağlanır.
 
 * Ağ segmantasyonu çok önemli
 
@@ -729,7 +737,7 @@ Cyber Kill Chain, bir saldırının adımlarını tanımlayarak güvenlik uzmanl
     <img src="./assets/ckc.png" width="500">
 </p>
 
-## Red Team vs Blue Team Startegies
+## Bölüm 3: Red Team vs Blue Team Startegies
 
 Red Team ve Blue Team, siber güvenlik alanında kullanılan iki farklı stratejik yaklaşımı ifade eder. Red Team, saldırganların rolünü üstlenerek sistemi veya organizasyonu test etmeye çalışırken, Blue Team ise savunma görevini üstlenerek saldırılara karşı koruma ve önlem alma işlemleri gerçekleştirir. İşte Red Team ve Blue Team'in bazı stratejileri:
 
@@ -851,7 +859,6 @@ Terimler:
 
 Bu kavramlar, blue team'in organizasyonun savunma düzeyini artırmak ve güvenlik tehditlerine karşı etkili bir şekilde yanıt vermek için uyguladığı önlemlerden sadece birkaçıdır. Blue team, proaktif ve reaktif güvenlik önlemleri alarak organizasyonun güvenlik postürünü güçlendirir.
 
-
 ### Malware 
 
 <p align="center">
@@ -896,7 +903,7 @@ Antivirus, EPP ve EDR arasındaki temel fark, EDR yazılımlarının EPP yazıl�
 
 Antivirus, EPP ve EDR yazılımlarını birlikte kullanmak, bilgisayarınızı, sunucunuzu ve mobil cihazınızı en iyi şekilde korumanın en iyi yoludur. Antivirus yazılımları, kötü amaçlı yazılımların bilgisayarınıza bulaşmasını önlerken, EPP ve EDR yazılımları, bilgisayarınıza bulaşan kötü amaçlı yazılımları algılar ve bunlara yanıt verir. Bu, bilgisayarınızı, sunucunuzu ve mobil cihazınızı en kapsamlı şekilde korumanızı sağlar.
 
-# COMMON TYPES OF SECURITY VULNERABILITIES
+### COMMON TYPES OF SECURITY VULNERABILITIES
 
 <p align="center">
     <img src="./assets/Security-Vulnerabilities.png">
@@ -904,7 +911,7 @@ Antivirus, EPP ve EDR yazılımlarını birlikte kullanmak, bilgisayarınızı, 
 
 Kaynak: [Security Vulnerabilities](https://www.spiceworks.com/it-security/vulnerability-management/articles/what-is-a-security-vulnerability/)
 
-## Incident Handling & Management
+## Bölüm 4: Incident Handling & Management
 
 ### Incident Handling & Management Süreçleri
 
@@ -914,7 +921,7 @@ Kaynak: [Security Vulnerabilities](https://www.spiceworks.com/it-security/vulner
 
 - Incidents (Olaylar): Uyarılar, gerçek tehditleri belirlemek için SOC analistleri tarafından incelenir ve doğrulanır. Bir uyarının bir saldırıya veya tehdide işaret ettiği doğrulandığında, olay bir "incident" (olay) olarak kabul edilir. Incident'lar, organizasyonun siber güvenlik önlemleri altında meydana gelen güvenlik olaylarını ifade eder. Bir incident örneği, bir kötü amaçlı yazılım saldırısı, veri sızıntısı, kimlik avı saldırısı veya DDoS saldırısı olabilir. SOC analistleri, incident'ları aciliyet ve önem düzeyine göre sınıflandırır ve uygun yanıt süreçlerini başlatır. Incident yönetimi, saldırının etkilerini en aza indirgemek ve güvenlik açıklarını düzeltmek için etkili bir şekilde yönetilmelidir.
 
-## Open Source and Free Blue Team Tools
+## Bölüm 5: Open Source and Free Blue Team Tools
 
 <p align="center">
     <img src="./assets/suricata.jpg" width="400">
@@ -995,7 +1002,7 @@ Bu komut dizisi, `suricata` aracını belirli bir PCAP dosyası üzerinde çalı
 
 Sonuç olarak, bu komut dizisi, Suricata tarafından tespit edilen olay türlerini sayarak en yaygın olay türlerini belirlemenizi sağlar.
 
-Bu dosyalar, Suricata'nın çalışması sırasında oluşturulan ve kullanılan log dosyalarıdır. İşlevleri ve içerikleri aşağıda açıklanmıştır:
+Suricata'nın çalışması sırasında oluşturulan ve kullanılan log dosyalarının, işlevleri ve içerikleri aşağıda açıklanmıştır:
 
 1. **eve.json**:
 `eve.json`, Suricata'nın olayları JSON (JavaScript Object Notation) formatında logladığı bir dosyadır. JSON formatı, verilerin kolayca işlenebilmesi ve farklı programlama dilleriyle kolayca uyum sağlaması için kullanılan bir veri değişim formatıdır. `eve.json` dosyasında, tespit edilen ağ etkinlikleri, alarm bilgileri, IP adresleri, port numaraları, saldırı türleri ve diğer güvenlik olayları hakkında ayrıntılı bilgiler bulunabilir.
@@ -1011,9 +1018,9 @@ Bu dosyalar, Suricata'nın çalışması sırasında oluşturulan ve kullanılan
 
 Bu dosyalar, Suricata'nın çalışması sırasında tespit edilen güvenlik olayları, ağ trafiği analizi sonuçları ve performans bilgileri gibi önemli bilgileri kaydetmek için kullanılır. Güvenlik uzmanları, siber güvenlik analistleri ve sistem yöneticileri bu log dosyalarını izleyerek ağlarının güvenliğini değerlendirebilir ve olası tehditleri tespit edebilir.
 
-log tcp $HOME_NET any -> $EXTERNAL_NET 4444 (msg:"Anormal Port Bağlantı İsteği 444";sid:002;rid:1;)
+`log tcp $HOME_NET any -> $EXTERNAL_NET 4444 (msg:"Anormal Port Bağlantı İsteği 444";sid:002;rid:1;)`
 
-alert tcp $EXTERNAL_NET any -> $HOME_NET $FTP_PORT (msg: "Dışarıdan İçeriğe FTP İsteği";sid:002;rid:1;)
+`alert tcp $EXTERNAL_NET any -> $HOME_NET $FTP_PORT (msg: "Dışarıdan İçeriğe FTP İsteği";sid:002;rid:1;)`
 
 ### HIDS - Wazuh
 
