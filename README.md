@@ -656,7 +656,7 @@ Derinlemesine savunma neden gereklidir ?
 
 * Derinlemesine savunma stratejisi yol gösterici illkesi, tek bir güvenlik ürünün bir karşılabileceği  bir saldırıya karşı aslında tek bir güvenlik ürünü veya tek bir savunma katmanı aslında bir ağı savunmayacağı (Hiçbir sistem sömürülemez veya hacklenemez değildir).  Bu prensip ilede bir den fazla savunma katmanı inşa etmek gerekiyor. Bu savunma katmanlarının birbirinin ileyişi engel olmamalı. Ve özellikle business işini engellememesi gerekiyor.
 
-! Zero trust gibi sistemler
+! Zero trust gibi sistemler (Düzenlenecek)
 
 * Ağ segmantasyonu çok önemli
 
@@ -725,7 +725,9 @@ Cyber Kill Chain, genellikle aşağıdaki adımlardan oluşur:
 
 Cyber Kill Chain, bir saldırının adımlarını tanımlayarak güvenlik uzmanlarına ve organizasyonlara saldırıları tespit etmek, saldırı süreçlerini kesmek veya en azından etkilerini minimize etmek için bir çerçeve sunar. Buna dayanarak, organizasyonlar savunma stratejilerini planlayabilir, güvenlik açıklarını kapatmak ve saldırıları tespit etmek için gereken önlemleri alabilir.
 
-![Cyber Kill Chain](assets/ckc.png)
+<p align="center">
+    <img src="./assets/ckc.png" width="500">
+</p>
 
 ## Red Team vs Blue Team Startegies
 
@@ -777,9 +779,7 @@ Terimler:
 
 15. Security Misconfigurations: Güvenlik hatalı yapılandırmalar, sistemlerin veya yazılımların yanlış yapılandırılmasından kaynaklanan güvenlik açıklarına neden olabilir. Red team, organizasyonun güvenlik yapılandırmalarını doğrulamak için bu tür hataları araştırabilir.
 
-16. Vendor and Third-Party Defaults: Tedarikçi ve üçüncü taraf yazılımlar, varsayılan olarak güvenlik zafiyetleri içerebilir. Red team, bu tür yazılımların güvenlik düzey
-
-ini test etmek için varsayılan yapılandırmaları kullanabilir.
+16. Vendor and Third-Party Defaults: Tedarikçi ve üçüncü taraf yazılımlar, varsayılan olarak güvenlik zafiyetleri içerebilir. Red team, bu tür yazılımların güvenlik düzeyini test etmek için varsayılan yapılandırmaları kullanabilir.
 
 17. Remote Access: Uzaktan erişim, kuruluş çalışanlarının veya dış paydaşların sistemlere uzaktan bağlanmasına olanak tanır. Red team, uzaktan erişim yöntemlerini kullanarak organizasyonun savunmasını test edebilir.
 
@@ -903,3 +903,148 @@ Antivirus, EPP ve EDR yazılımlarını birlikte kullanmak, bilgisayarınızı, 
 </p>
 
 Kaynak: [Security Vulnerabilities](https://www.spiceworks.com/it-security/vulnerability-management/articles/what-is-a-security-vulnerability/)
+
+## Incident Handling & Management
+
+### Incident Handling & Management Süreçleri
+
+- Logs (Günlükler): Bir bilgisayar sistemi, ağ veya uygulama tarafından kaydedilen olayların belgelenmiş kayıtlarıdır. Loglar, her türlü etkinliği izlemek ve anlamak için kullanılır. Bir SOC, farklı kaynaklardan (örneğin, sunucular, güvenlik cihazları, ağ cihazları, uygulamalar) toplanan günlükleri toplar ve analiz eder. Bu günlükler, normal işlemlerden sapmaları veya potansiyel tehdit göstergelerini tespit etmek için kullanılır. SOC analistleri, günlükleri izleyerek saldırı girişimlerini veya kötü amaçlı etkinlikleri belirleyebilir ve uygun önlemleri alabilir.
+
+- Alerts (Uyarılar): SOC, günlükleri analiz ederek veya otomatik güvenlik araçları tarafından oluşturulan uyarıları inceleyerek potansiyel tehditleri belirler. Bir uyarı, belirli bir olayın veya etkinliğin bilinen bir tehdit veya saldırı modeli ile eşleştiğini bildiren bir bildirimdir. Örneğin, bir belirli IP adresinden gelen aşırı sayıda başarısız oturum açma denemesi veya kötü amaçlı yazılım tarafından bulaşıcı bir bağlantı girişimi gibi birçok olay bir uyarı oluşturabilir. SOC analistleri, uyarıları önceliklendirir ve gerçek tehditlerden yanılsamalardan ayırt etmek için detaylı analiz yapar.
+
+- Incidents (Olaylar): Uyarılar, gerçek tehditleri belirlemek için SOC analistleri tarafından incelenir ve doğrulanır. Bir uyarının bir saldırıya veya tehdide işaret ettiği doğrulandığında, olay bir "incident" (olay) olarak kabul edilir. Incident'lar, organizasyonun siber güvenlik önlemleri altında meydana gelen güvenlik olaylarını ifade eder. Bir incident örneği, bir kötü amaçlı yazılım saldırısı, veri sızıntısı, kimlik avı saldırısı veya DDoS saldırısı olabilir. SOC analistleri, incident'ları aciliyet ve önem düzeyine göre sınıflandırır ve uygun yanıt süreçlerini başlatır. Incident yönetimi, saldırının etkilerini en aza indirgemek ve güvenlik açıklarını düzeltmek için etkili bir şekilde yönetilmelidir.
+
+## Open Source and Free Blue Team Tools
+
+<p align="center">
+    <img src="./assets/suricata.jpg" width="400">
+</p>
+
+### NIDS - Suricata
+
+NIDS (Network Intrusion Detection System - Ağ Sızma Tespit Sistemi), bilgisayar ağlarını izleyerek ve analiz ederek potansiyel güvenlik ihlallerini tespit etmeye yönelik bir güvenlik teknolojisidir. NIDS, ağ trafiğini pasif olarak izler ve zararlı veya şüpheli aktivitelere dair işaretleri belirleyerek güvenlik sorunlarını saptar. Bu tür sistemler, bilgisayar ağlarının güvenliğini artırmak için kullanılır ve siber saldırıların tespit ve önlenmesinde önemli bir rol oynar.
+
+Suricata, açık kaynaklı bir ağ güvenlik ve ağ güvenlik bilgi ve olay yönetimi (SIEM) aracıdır. Ağ trafiğini izlemek, paketleri analiz etmek, tehditleri tespit etmek ve ağdaki olası güvenlik tehditlerine karşı koruma sağlamak için tasarlanmıştır. Suricata, IDS (Intrusion Detection System) ve IPS (Intrusion Prevention System) gibi özellikleri içeren çok yönlü bir araçtır.
+
+Suricata, açık kaynaklı ve çok hızlı bir IDS/IPS motoru olan "Emerging Threats Open" kurallarını destekleyerek potansiyel tehditlerin tespitini sağlar. Ayrıca, ETOpen kurallarının yanı sıra, VRT (Snort Community Rules) kurallarını da destekleyerek daha fazla esneklik sunar.
+
+Suricata'nın ana özellikleri şunlardır:
+
+1. Ağ Protokol Analizi: Suricata, çeşitli ağ protokollerini analiz edebilir ve anormal trafiği tespit edebilir.
+2. Signature Tabanlı Algılama: Kurallar kullanarak bilinen saldırıların belirtilerini tanımlamak için imzaları kullanır.
+3. Davranışsal Algılama: Belirli bir davranış kalıbına dayanan potansiyel tehditleri tespit etme yeteneği.
+4. Anomaly Detection (Sıradışı Durum Algılama): Ağ trafiğindeki anormal davranışları tespit ederek saldırılara karşı koruma sağlar.
+5. IPS (Intrusion Prevention System): Tehdit tespiti sırasında belirlenen tehditlere karşı otomatik olarak önlem alma yeteneği.
+6. Gelişmiş Veri Yakalama: Suricata, ayrıntılı paket yakalama ve kayıt yetenekleri sunar, böylece saldırıları geriye dönük olarak analiz edebilirsiniz.
+7. IPv6 Desteği: Hem IPv4 hem de IPv6 trafiği için tam destek sağlar.
+8. Çoklu Arabirim Desteği: Birden fazla ağ arabirimini izleyebilme ve analiz edebilme özelliği.
+
+Suricata, ağ güvenlik uzmanları, siber güvenlik analistleri ve sistem yöneticileri tarafından kullanılır. Tehditlerin tespiti ve engellenmesinde önemli bir rol oynayarak ağların daha güvenli hale gelmesine katkı sağlar. Ayrıca, açık kaynaklı olması sayesinde sürekli olarak güncellenir ve topluluk tarafından desteklenir.
+
+#### NIDS Rules Design
+
+`action protocol from_ip port -> to_ip port (msg:"defend us"; content:" something" ;content:" something else" ; sid:10000000; rev:1;)`
+
+- `action`: Bu, kuralın tespit edilen bir olay olduğunda ne yapılacağını belirtir. Örneğin, "alert" olarak belirtilirse, NIDS, saldırıyı algıladığında bir uyarı oluşturacaktır. Başka bir seçenek, saldırı paketlerini doğrudan engellemek olabilir (örneğin, "drop" ya da "reject" gibi).
+
+- `protocol`: Kuralın hangi ağ protokolü üzerinde çalışacağını belirtir. Örneğin, TCP, UDP, ICMP gibi protokoller olabilir.
+
+- `from_ip`: Bu, kuralın izleyeceği kaynak IP adresini belirtir. Saldırganın IP adresi genellikle buraya gelir.
+
+- `port`: Kaynak IP adresi ile ilişkilendirilmiş kaynak port numarasını belirtir. Saldırıların spesifik portlar üzerinden gerçekleştirildiği durumlar için kullanılır.
+
+- `to_ip`: Hedef IP adresini belirtir. Bu, saldırının hedeflendiği IP adresidir.
+
+- `port`: Hedef IP adresi ile ilişkilendirilmiş hedef port numarasını belirtir. Saldırıların hedeflenen belirli portlarda gerçekleştirildiği durumlar için kullanılır.
+
+- `msg`: Bu, kuralın eylemini açıklayan bir mesajdır. Burada "defend us" gibi bir mesaj kullanılmış.
+
+- `content`: Bu, saldırı paketinde belirli içeriği aramak için kullanılır. Saldırganlar bazı saldırıları belirli içeriklerle maskeler ve NIDS, bu içerikleri arayarak saldırıları tespit edebilir.
+
+- `sid`: Bu, kurala benzersiz bir kimlik numarası (Signature ID) atar. Bu, kuralı diğerleriyle ayırt etmek için kullanılır.
+
+- `rev`: Bu, kuralın sürümünü belirtir. Bu, kuralı güncellediğinizde veya revize ettiğinizde artırılabilir.
+
+Bu kural, NIDS'in belirtilen kaynaktan belirtilen hedefe bir şeyler gönderilmesini ve bu paketlerde belirtilen içeriklerin olup olmadığını izlemesini ve "defend us" mesajıyla bir uyarı oluşturmasını sağlar. Ancak, burada verilen kuralın tam etkinliği ve uygunluğu, gerçek uygulama senaryosuna ve güvenlik gereksinimlerine bağlı olarak değerlendirilmelidir. Gerçek dünyada, daha kapsamlı ve karmaşık kural setleri oluşturmak gerekebilir.
+
+Örnek saldırı pcap dosyasını [PCAP-ATTACK](https://github.com/sbousseaden/PCAP-ATTACK/blob/master/Lateral%20Movement/LM_psexec_smb_dcerpc_epm_svcctl.pcapng) reporsundan indirebilirsiniz.
+
+https://rules.emergingthreats.net/ Suricata için kullanılabilinecek kurallar
+
+Bu komut dizisi, `suricata` aracını belirli bir PCAP dosyası üzerinde çalıştırarak tehditleri tespit etmesini ve olayları loglamasını sağlar. Ardından, `jq` aracını kullanarak log dosyasını işleyerek farklı olay türlerinin sayısını sayar ve sıralar.
+
+İşlemleri adım adım açıklayalım:
+
+1. `suricata -c /etc/suricata/suricata.yaml -r LM_psexec_smb_dcerpc_epm_svcctl.pcapng -s /etc/suricata/rules/ -l logs/ -k none`
+
+   Bu komut, Suricata'nın ağ trafiğini analiz etmesini ve tehditleri tespit etmesini sağlar. Aşağıdaki seçenekler kullanılmıştır:
+   - `-c /etc/suricata/suricata.yaml`: Suricata'nın yapılandırma dosyasını belirtir.
+   - `-r LM_psexec_smb_dcerpc_epm_svcctl.pcapng`: Suricata'nın analiz edeceği PCAP dosyasını belirtir. Bu örnekte `LM_psexec_smb_dcerpc_epm_svcctl.pcapng` dosyası analiz edilecek PCAP dosyasının adını temsil eder.
+   - `-s /etc/suricata/rules/`: Kullanılacak kuralların dizinini belirtir. Bu örnekte `/etc/suricata/rules/` dizini kullanılacak kuralların dizinini temsil eder.
+   - `-l logs/`: Log dosyalarının kaydedileceği dizini belirtir. Bu örnekte `logs/` dizini log dosyalarının kaydedileceği dizini temsil eder.
+   - `-k none`: Komut satırında "killed" veya "Ctrl+C" gibi kapatma işaretleri alındığında Suricata'nın kapanmasını engeller.
+
+2. `cat eve.json | jq -c '.event_type' | sort | uniq -c | sort -nr`
+
+   Bu komut ise Suricata tarafından oluşturulan `eve.json` log dosyasını işlemek ve farklı olay türlerinin sayısını saymak için kullanılır. İşlemlerin açıklaması:
+   - `cat eve.json`: `eve.json` dosyasının içeriğini konsola yazdırır.
+   - `jq -c '.event_type'`: `jq` aracını kullanarak JSON içindeki "event_type" alanını seçer ve çıktıyı sadece bu alanla sınırlar. `-c` seçeneği, her sonucu tek bir satırda verir.
+   - `sort`: Sıralama işlemini yapar, yani olay türlerini alfabetik olarak sıralar.
+   - `uniq -c`: Ardışık tekrar eden satırları sayar ve yanlarına tekrar sayısını ekler.
+   - `sort -nr`: Son olarak, satır sayısına göre büyükten küçüğe sıralar.
+
+Sonuç olarak, bu komut dizisi, Suricata tarafından tespit edilen olay türlerini sayarak en yaygın olay türlerini belirlemenizi sağlar.
+
+Bu dosyalar, Suricata'nın çalışması sırasında oluşturulan ve kullanılan log dosyalarıdır. İşlevleri ve içerikleri aşağıda açıklanmıştır:
+
+1. **eve.json**:
+`eve.json`, Suricata'nın olayları JSON (JavaScript Object Notation) formatında logladığı bir dosyadır. JSON formatı, verilerin kolayca işlenebilmesi ve farklı programlama dilleriyle kolayca uyum sağlaması için kullanılan bir veri değişim formatıdır. `eve.json` dosyasında, tespit edilen ağ etkinlikleri, alarm bilgileri, IP adresleri, port numaraları, saldırı türleri ve diğer güvenlik olayları hakkında ayrıntılı bilgiler bulunabilir.
+
+2. **fast.log**:
+`fast.log`, Suricata'nın hızlı loglama modunda oluşturduğu bir dosyadır. Hızlı loglama, yüksek trafikli ağlarda daha düşük ağır yük ile loglama yapabilmek için kullanılan bir özelliktir. Bu log dosyasında, tespit edilen ağ olayları hakkında daha kısa ve öz bilgiler bulunabilir. JSON formatı değil, daha düz metin tabanlı bir loglama yöntemi kullanılır.
+
+3. **stats.log**:
+`stats.log`, Suricata'nın istatistikleri ve performans metriklerini kaydettiği bir dosyadır. Bu dosyada, Suricata'nın çalışma süresi, trafiği nasıl işlediği, tespit edilen tehdit sayıları, drop edilen paketler ve diğer performans verileri yer alabilir. Bu tür bilgiler, Suricata'nın verimliliğini ve etkinliğini değerlendirmek için kullanılır.
+
+4. **suricata.log**:
+`suricata.log`, genellikle ana log dosyasıdır ve Suricata'nın çeşitli durum ve hata mesajlarını kaydettiği bir dosyadır. Suricata'nın başlangıcı, kapanması, kural yüklemesi, ağ arabirimleri ile ilgili durumlar ve diğer önemli olaylar bu log dosyasında bulunabilir. Bu log dosyası, Suricata'nın genel durumunu incelemek için önemli bilgiler sağlar.
+
+Bu dosyalar, Suricata'nın çalışması sırasında tespit edilen güvenlik olayları, ağ trafiği analizi sonuçları ve performans bilgileri gibi önemli bilgileri kaydetmek için kullanılır. Güvenlik uzmanları, siber güvenlik analistleri ve sistem yöneticileri bu log dosyalarını izleyerek ağlarının güvenliğini değerlendirebilir ve olası tehditleri tespit edebilir.
+
+log tcp $HOME_NET any -> $EXTERNAL_NET 4444 (msg:"Anormal Port Bağlantı İsteği 444";sid:002;rid:1;)
+
+alert tcp $EXTERNAL_NET any -> $HOME_NET $FTP_PORT (msg: "Dışarıdan İçeriğe FTP İsteği";sid:002;rid:1;)
+
+### HIDS - Wazuh
+
+HIDS, Host-based Intrusion Detection System, yani Türkçe çevirisiyle "Konak Tabanlı Sızma Tespit Sistemi" anlamına gelir. HIDS, bir bilgisayar veya ağa bağlı olan bir bilgisayarın veya sunucunun güvenlik durumunu izleyen ve sızma girişimlerini tespit eden bir güvenlik teknolojisidir.
+
+HIDS'in temel amacı, konak sistemdeki anormal davranışları tespit etmek ve potansiyel saldırılara karşı koruma sağlamaktır. Bu tür bir sistem, bilgisayarlar ve sunucular için ek bir güvenlik katmanı sağlar ve saldırganların yetkisiz erişim, zararlı yazılım veya diğer tehditlerle sistemi ele geçirmesini veya etkilemesini engellemeye çalışır.
+
+HIDS, konak sistemde gerçek zamanlı izleme yapar ve belirli güvenlik politikalarına veya kurallara uyan anormallikleri veya şüpheli etkinlikleri tespit ederek sinyal verir. Örneğin, dosya değişiklikleri, kayıt defteri girişleri, ağ trafiği gibi önemli sistem bileşenlerinde meydana gelen değişiklikleri izleyebilir. Eğer bu değişiklikler güvenlik politikalarıyla uyumsuzsa veya normal davranıştan farklısa, HIDS alarm vererek sistem yöneticisine uyarı gönderir.
+
+Bir HIDS, saldırılara karşı koruma sağlamak için ayrıca günlük dosyalarını, sistem dosyalarını ve diğer kritik verileri izleyebilir ve analiz edebilir. Böylece, potansiyel tehditler erken aşamada tespit edilir ve gereken önlemler alınabilir.
+
+Unutulmaması gereken önemli bir nokta, HIDS'in tek başına yeterli bir güvenlik çözümü olmadığıdır. Ağ tabanlı güvenlik cihazları ve güvenlik politikalarıyla birlikte kullanılarak bütüncül bir güvenlik stratejisi oluşturulmalıdır.
+
+<p align="center">
+    <img src="./assets/Wazuh_blue.png" width="200">
+</p>
+
+#### Wazuh
+
+Wazuh, açık kaynaklı bir güvenlik platformudur ve Wazuh Projesi tarafından geliştirilmiştir. Wazuh, HIDS (Host-based Intrusion Detection System) ve log yönetimi gibi çeşitli güvenlik işlevlerini bir araya getirir ve merkezi bir güvenlik yönetim aracıdır.
+
+Wazuh, ağ tabanlı güvenlik tehditlerini izlemek ve tespit etmek için HIDS işlevini yerine getirir. Bir ağa veya bilgisayara bağlı cihazların sistem davranışlarını gerçek zamanlı olarak izler ve şüpheli veya zararlı aktiviteleri tespit ederek sistem yöneticisini uyarır. Wazuh, açık kaynaklı bir HIDS olarak OSSEC (Open Source Security) projesine dayanır ve OSSEC'in geliştirilmiş ve genişletilmiş bir versiyonudur.
+
+Wazuh, ayrıca log yönetimi ve analizi işlevlerini de sağlar. Sistem, ağ ve güvenlik cihazlarından gelen günlük verilerini toplar, işler ve analiz eder. Bu, potansiyel güvenlik olaylarının tespit edilmesi ve saldırıların izlenmesi için önemli bir özelliktir.
+
+Wazuh, hem güvenlik olayları hem de günlük verileri için kapsamlı bir raporlama ve görselleştirme sunar. Ayrıca, farklı kaynaklardan gelen verileri birleştirme yeteneği sayesinde daha bütünsel bir güvenlik görünümü sunar.
+
+Wazuh, açık kaynak kodlu olması sayesinde topluluk tarafından geliştirilebilir ve özelleştirilebilir. Bu nedenle, küçük ve büyük işletmeler için uygun maliyetli ve esnek bir güvenlik çözümü sağlar.
+
+Özetle, Wazuh, güvenlik olaylarını izlemek, tespit etmek ve raporlamak için kullanılan açık kaynaklı bir güvenlik platformudur. HIDS ve log yönetimi işlevlerini bir araya getirerek, bilgisayar ağları ve sistemlerinin güvenliğini artırmak için etkili bir araç sunar.
+
+<p align="center">
+    <img src="./assets/wazuh.png" width="500">
+</p>
